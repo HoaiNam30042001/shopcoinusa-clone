@@ -1,0 +1,19 @@
+button {
+    background: #f5c928;
+    border-radius: 8px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 8px;
+    border-radius: 2cm;
+    border: none !important;
+    outline: none !important;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px;
+    width: 100%;
+}
+a{
+    font-size: small;   
+}
