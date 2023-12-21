@@ -1,0 +1,91 @@
+.form-container-main{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+* {
+    margin: 2px;
+}
+.form-login{
+    margin: auto;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    height: fit-content;
+    padding:32px;
+    width: 100%;
+    max-height: fit-content;
+}
+.form-logo {
+    width: 100%;
+    height: 75px;
+}
+.formLogin-title{
+    font-size: 24px;
+    font-style: normal;
+    padding: 0%;
+    font-weight: 600;
+    line-height: 32px;
+    font-size: 200%;
+}
+.formLogin-image{
+    width: 220px;
+    height: 70px;
+    vertical-align: middle;
+    border-style: none;
+    object-fit: contain;
+}
+.formLogin-title{
+    font-size: 24px;
+    font-style: normal;
+    padding: 0%;
+    font-weight: 600;
+    line-height: 32px;
+    font-size: 200%;
+}
+
+.formLogin-input{
+    width: 100%;
+    max-height: fit-content;
+}
+.formLogin-forgotPass{
+    width: 100%;
+    text-align: left;
+    max-width: fit-content;
+    color: #fbc300;
+}
+ 
+.btn{
+    text-align: right;
+    width: 100%;
+}
+.formLogin-forgotPass-link{
+    text-decoration: none;
+    position: relative;
+    right: 0px;
+    left: 12vh;
+    width: 100%;
+    margin-bottom:10px;
+    
+    color: #fbc300;
+    width: 100%;
+    
+}
+.formLogin-help{
+    width: 100%;
+    text-align: center;
+}
+.login-forgotpwd-link{
+    text-decoration: none;
+    color: #f5c928;
+    margin: 11px;
+}
+@media (max-width: 46.25em) {
+    .form-login {
+        width: 100%;
+    }
+}
