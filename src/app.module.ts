@@ -1,16 +1,13 @@
-import { Module } from "@nestjs/common";
-import { AppController } from "./app.controller";
-import { AppService } from "./app.service";
-import { CoinModule } from "./coin/coin.module";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { CoinEntity } from "./coin/coin.entity";
+import { Module } from '@nestjs/common';
+import { MongooseModule } from '@nestjs/mongoose';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
-    CoinModule,
-    TypeOrmModule.forRoot({
-      entities: [CoinEntity],
-    }),
+    MongooseModule.forRoot('mongodb://localhost:27017/shopcoin'),
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService],
