@@ -1,24 +1,33 @@
-import classNames from "classnames"
+import classNames from "classnames/bind"
 import styles from './FormInput.module.css'
+import { Form, InputGroup } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import React, {useState} from'react'
 const cx = classNames.bind(styles)
 export default function FormInput(props) {
+    const [showPassword,SetShowPassword] = useState(false)
+    
+    const handleToggle = ()=>{
+        SetShowPassword(!showPassword)
+    }
     return (
         <>
-            <div className={`${cx("formInput-container")}`}>
-                <div >
-                    <label className={`${cx("loginInput-label")}`}>
-                        {props.label}
-                    </label>
+            <div className={`${cx("form-input-container")}`}>
+                <div className={`${cx("form-input-label")}`}>
+                    {props.label}
                 </div>
-                <div className={`${cx("loginInput-content")}`}>
-                    <input
-                        className={`${cx("input-field")}`}
-                        placeholder={`${cx(`Enter your ${props.placeholder}`)}`}
-                        type = {props.showPwd ? (props.typePwd ? "text" : "password"): props.type}
+                    <input 
+                        placeholder={props.placeholder}
+                        className={`${cx("input")}`}
+                        type={props.type}
+                        icon={showPassword ? faEyeSlash : faEye}
+                        onClick={handleToggle}
                     />
-                </div>
+                    {/* <FontAwesomeIcon
+                       
+                    /> */}
             </div>
-
         </>
     )
 }

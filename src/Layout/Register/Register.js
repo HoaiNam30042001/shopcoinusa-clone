@@ -9,7 +9,8 @@ export default function Register() {
         <div className={`${cx('formContainer')}`}>
             <div className={`${cx('formContainer-main')}`}>
                 <FormRegister 
-                    titleForm="Register account"
+                     titleForm="Register account"
+                     titleFormHelp="Have an account? "
                 />
             </div>
         </div>

@@ -5,60 +5,54 @@ import { Link } from "react-router-dom";
 import React from "react";
 import routers from "../../../routers/routers";
 import Button from "../../Button/Button";
+import Image from "../../Image/Image";
 const cx = className.bind(styles);
 
 export default function FormRegister(props) {
     return (
         <>
-            <div className={`${cx("form-container-main")}`}>
-                <div className={`${cx("form-login")}`}>
-                    <div className={`${cx("form-logo")}`}>
-                        <img
-                            className={`${cx("formRegister-image")}`}
-                            src='https://shopcoinusa.com/images/header-logo.png'
-                            alt='Logo'
+            <div className={`${cx("form-container")}`}>
+                <div className={`${cx("form-container-main")}`}>
+                    <div className={`${cx("form-login")}`}>
+                        <Image
+                            src='/images/header-logo.png'
+                            alt='login-logo'
+                            className={`${cx('form-logo')}`}
                         />
-                    </div>
-                    <p className={`${cx("formRegister-title")}`}>
-                        {props.titleForm}
-                    </p>
-                    <div className={`${cx('formRegister-input')}`}>
-                        <FormInput
+                        <p className={`${cx("form-title")}`}>{props.titleForm}</p>
+                        <FormInput 
+                            className={`${cx('form-input')}`}
+                            placeholder="Enter your username"
+                            type="text"
                             label="Username"
-                            type="text"
-                            placeholder="Username"
                         />
-                        <FormInput
+                        <FormInput 
+                            className={`${cx('form-input')}`}
+                            placeholder="Enter your email"
+                            type="text"
                             label="Email"
-                            type="text"
-                            placeholder="Email"
                         />
-                        <FormInput
-                            label="Password"
+                        <FormInput 
+                            className={`${cx('form-input')}`}
+                            placeholder="Enter your password"
                             type="password"
-                            placeholder="password"
+                            label="Password"
                         />
-                    </div>
-                    <div className={`${cx("formRegister-btn")}`}>
-                       <Button
-                        className={`${cx("btn")}`}
-                        buttonName="Register"
-                       
-                       />
-                    </div>
-                    <div className={`${cx("formRegister-help")}`}>
-                        <span>
-                            Don't have an account?
-                            <Link 
-                                className={`${cx("login-forgotpwd-link")}`}
-                                to={routers.login}
-                            >
-                                <a className={`${cx("formRegister-help-title")}`}>Login</a>
-                            </Link>
-                        </span>
+                        <Button 
+                            buttonName="Register"                        
+                        />
+                            <span className={`${cx('form-help')}`}>
+                                {props.titleFormHelp} 
+                                <Link
+                                    to={routers.login}
+                                    className={`${cx("form-link-register")}`}
+                                >
+                                    <a className={`${cx("form-help-title")}`}>Login</a>
+                                </Link>
+                            </span>
                     </div>
                 </div>
-            </div>        
+            </div>            
         </>
     );
 }
