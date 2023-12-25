@@ -6,13 +6,10 @@ const cx = className.bind(styles);
 export default function Login() {
   return (
     <>
-        <div className={`${cx('formContainer')}`}>
-            <div className={`${cx('formContainer-main')}`}>
-                <FormLogin
-                    titleForm="Login your account"
-                />
-            </div>
-        </div>
+        <FormLogin
+            titleForm="Log in your account"
+            titleFormHelp="Don't have an account ? "
+        />
     </>
    );
 }
