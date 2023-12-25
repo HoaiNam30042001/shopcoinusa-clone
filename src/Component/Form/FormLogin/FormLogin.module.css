@@ -1,88 +1,74 @@
-.form-container-main{
+.form-container {
+    width: 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    background-image: url('https://shopcoinusa.com/images/bg-login.png');
+}
+
+.form-container-main {
     margin: auto;
     width: 100%;
     height: 100%;
     padding: 15px;
 }
-* {
-    margin: 2px;
-}
-.form-login{
+.form-login {
     margin: auto;
     min-height: 300px;
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: white;
-    width: 100%;
-    height: fit-content;
-    padding:32px;
-    width: 100%;
-    max-height: fit-content;
+    background-color: var(--color-white);
+    width: 30%;
+    padding: 32px;
 }
 .form-logo {
-    width: 100%;
-    height: 75px;
+    width: 250px;
+    height: 50px;
+    margin: -10px;
 }
-.formLogin-title{
-    font-size: 24px;
+.form-title {
+    font-size: 16px;
     font-style: normal;
-    padding: 0%;
     font-weight: 600;
-    line-height: 32px;
-    font-size: 200%;
+    /* line-height: 32px; */
+    margin: 24px 0;
 }
-.formLogin-image{
-    width: 220px;
-    height: 70px;
-    vertical-align: middle;
-    border-style: none;
-    object-fit: contain;
+.form-input{
+    margin: 8px 0;
 }
-.formLogin-title{
-    font-size: 24px;
-    font-style: normal;
-    padding: 0%;
-    font-weight: 600;
-    line-height: 32px;
-    font-size: 200%;
-}
-
-.formLogin-input{
+.form-link{
+    margin-top: 0px;
+    font-size: 16px;
     width: 100%;
-    max-height: fit-content;
-}
-.formLogin-forgotPass{
-    width: 100%;
-    text-align: left;
-    max-width: fit-content;
-    color: #fbc300;
-}
- 
-.btn{
     text-align: right;
-    width: 100%;
 }
 .formLogin-forgotPass-link{
     text-decoration: none;
-    position: relative;
-    right: 0px;
-    left: 12vh;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    margin-bottom:10px;
-    
-    color: #fbc300;
-    width: 100%;
-    
 }
-.formLogin-help{
+.formLogin-forgotPass-title{
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 10px;
     width: 100%;
-    text-align: center;
-}
-.login-forgotpwd-link{
+    margin: 14px 0;
     text-decoration: none;
-    color: #f5c928;
-    margin: 11px;
+}
+.form-link-register{
+    text-decoration: none;
+    color: var(--color-primary);
+}
+.form-help{
+    margin-top: 5px;
+    margin-bottom: -10px;
 }
 @media (max-width: 46.25em) {
     .form-login {
