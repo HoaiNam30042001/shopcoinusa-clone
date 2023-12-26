@@ -39,7 +39,9 @@ export default function FormRegister(props) {
                             label="Password"
                         />
                         <Button 
-                            buttonName="Register"                        
+                            buttonName="Register"        
+                            onEnter = {props.onEnter}         
+                            isValue={props.isValue}       
                         />
                             <span className={`${cx('form-help')}`}>
                                 {props.titleFormHelp} 

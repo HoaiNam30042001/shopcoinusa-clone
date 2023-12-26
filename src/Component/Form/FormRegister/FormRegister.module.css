@@ -26,15 +26,15 @@
     padding: 32px;
 }
 .form-logo {
-    width: 250px;
-    height: 50px;
+    width: 264px;
+    height: 75px;
     margin: -10px;
 }
 .form-title {
-    font-size: 16px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
-    /* line-height: 32px; */
+    line-height: 32px;
     margin: 24px 0;
 }
 .form-input{
@@ -69,6 +69,7 @@
 .form-help{
     margin-top: 5px;
     margin-bottom: -10px;
+    font-size: 14px;
 }
 @media (max-width: 46.25em) {
     .form-login {
