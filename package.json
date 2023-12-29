@@ -45,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Galaxy1602/shopcoinusa-clone.git",
+  "author": "Galaxy1602 <thienha16298@gmail.com>",
+  "license": "MIT"
 }
