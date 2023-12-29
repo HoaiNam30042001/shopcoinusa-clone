@@ -4,6 +4,8 @@ import App from "./App";
 import { applyMiddleware, compose, createStore } from "redux";
 import { thunk } from "redux-thunk";
 import "./styles/General.css";
+import "./styles/TableData.css";
+
 import { Provider } from "react-redux";
 import { rootReducer } from "./redux/reducer/rootReducer";
 import reportWebVitals from "./reportWebVitals";

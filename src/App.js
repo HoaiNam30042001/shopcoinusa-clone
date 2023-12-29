@@ -5,15 +5,29 @@ import HomePage from "./Component/HomePage/HomePage.js";
 import Login from "./Layout/Login/Login.js";
 import Register from "./Layout/Register/Register.js";
 import BuyCoin from "./Component/BuyCoin/BuyCoin.js";
+import { userRouter } from "./routers/routerRender.js";
 function App() {
+  const routers = userRouter;
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout Component={HomePage} />} />
-          <Route path={routers.login} element={<Login />}/>
-          <Route path={routers.register} element={<Register/>}/>
-          <Route path={routers.testCoinId} element={<Layout Component={BuyCoin} />}/>
+          {routers.map((route, index) => {
+            const Page = route.component;
+            return (
+              <Route
+                key={index}
+                path={route.path}
+                element={
+                  <Layout>
+                    <Page />
+                  </Layout>
+                }
+              />
+            );
+          })}
+          <Route path={routers.login} element={<Login />} />
+          <Route path={routers.register} element={<Register />} />
         </Routes>
         <div
           className="scroll-to-top-container"
