@@ -22,7 +22,7 @@ export default function FormInput(props) {
                 </div>
                     <input 
                         placeholder={props.placeholder}
-                        className={`${cx("input")}`}
+                        className={props.className}
                         type={props.type}
                         icon={showPassword ? faEyeSlash : faEye}
                         onClick={handleToggle}

@@ -44,6 +44,7 @@ const routers = {
   contactUser: "/contact",
   liveChatUser: "/live-chat",
   pageNotFound: "*",
+  testCoinId:"/id"
 };
 
 export default routers;

@@ -7,13 +7,13 @@ export default function Button(props) {
     return(
         <>
         {props.isProcess ? (
-            <button className={`${cx("btn")}`} onClick={props.onEnter}>
-            <a className={`${cx("title")}`}>
+            <button className={props.className} onClick={props.onEnter}>
+            <a className={props.classNameTitle}>
                 {props.buttonName}
             </a>
         </button> 
         ): (
-            <button className={`${cx("btn")}`} onClick={props.onEnter}>
+            <button className={props.className} onClick={props.onEnter}>
                 <Loading/>
         </button> 
         )}

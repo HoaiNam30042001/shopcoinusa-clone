@@ -8,7 +8,8 @@
     --color-btn-delete: #d50000;
     --color-btn-delete-hover: #d30000;
     --sidebar-bgc: #212121;
-
+    --btn-reset-text :rgb(26, 70, 230);
+    --btn-reset-background:rgb(177, 223, 243);
     --rgba-hover: rgba(0, 0, 0, 0.5);
     --rgba-modal-bgc: rgba(0, 0, 0, 0.5);
     --siderbar-active: #fbc300;

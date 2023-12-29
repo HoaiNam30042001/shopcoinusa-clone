@@ -46,6 +46,8 @@ export default function FormLogin(props) {
                             </Link>
                         </div>
                         <Button 
+                            className={`${cx("btn-input-login")}`}
+                            classNameTitle = {`${cx("btn-title")}`}
                             buttonName="Log in"        
                             onEnter = {props.onEnter}         
                             isValue={props.isValue}       
