@@ -3,7 +3,7 @@
     margin-bottom: 24px;
 }
 
-.table .thead {
+.table thead th{
     background-color: var(--table-thead-bgc);
     border-top: 2px solid var(--table-border-color);
     border-bottom: 2px solid var(--table-border-color);

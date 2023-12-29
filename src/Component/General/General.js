@@ -8,7 +8,7 @@ const cx = className.bind(styles);
 let refreshPage = () => {
   window.location.reload();
 };
-function General(RenderBodyTable) {
+function General({ children, dataHeaders, noActions }) {
   return (
     <>
       <div>
@@ -27,7 +27,9 @@ function General(RenderBodyTable) {
           </div>
         </div>
         <div className={`${cx("general-table-container")}`}>
-          <TableData Component={RenderBodyTable}></TableData>
+          <TableData noActions={noActions} headers={dataHeaders}>
+            {children}
+          </TableData>
         </div>
       </div>
     </>
