@@ -7,7 +7,10 @@ import React, {useState} from'react'
 const cx = classNames.bind(styles)
 export default function FormInput(props) {
     const [showPassword,SetShowPassword] = useState(false)
-    
+    const onChangeInput = (e)=>{
+        props.checkInput()
+        props.setInput(e.target.value)
+    }
     const handleToggle = ()=>{
         SetShowPassword(!showPassword)
     }
@@ -19,10 +22,11 @@ export default function FormInput(props) {
                 </div>
                     <input 
                         placeholder={props.placeholder}
-                        className={`${cx("input")}`}
+                        className={props.className}
                         type={props.type}
                         icon={showPassword ? faEyeSlash : faEye}
                         onClick={handleToggle}
+                        onChange={onChangeInput}
                     />
                     {/* <FontAwesomeIcon
                        

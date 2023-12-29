@@ -26,19 +26,31 @@
     padding: 32px;
 }
 .form-logo {
-    width: 250px;
-    height: 50px;
+    width: 264px;
+    height: 75px;
     margin: -10px;
 }
 .form-title {
-    font-size: 16px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 600;
-    /* line-height: 32px; */
+    line-height: 32px;
     margin: 24px 0;
 }
 .form-input{
-    margin: 8px 0;
+    align-items: center;
+    background: var(--color-white);
+    border: 1.5px solid var(--search-border-color);
+    outline: none;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+    width: 100%;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    padding: 0 16px;
+    font-size: 16px;
 }
 .form-link{
     margin-top: 0px;
@@ -69,6 +81,41 @@
 .form-help{
     margin-top: 5px;
     margin-bottom: -10px;
+    font-size: 14px;
+}
+.btn-title{
+    font-family: 'Times New Roman';
+    font-size: 14px;
+    font-weight: 450px;   
+}
+.btn-input-login {
+    background: var(--color-primary);
+    border-radius: 8px;
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 8px;
+    border: none !important;
+    outline: none !important;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.btn-input-login.disabled {
+    pointer-events: none;
+    user-select: none;
+    cursor: default !important;
+    opacity: 0.5 !important;
+}
+
+.btn-input-login:hover {
+    background: var(--primary-hover);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 @media (max-width: 46.25em) {
     .form-login {

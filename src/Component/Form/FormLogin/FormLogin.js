@@ -6,6 +6,7 @@ import React from "react";
 import routers from "../../../routers/routers";
 import Button from "../../Button/Button";
 import Image from "../../Image/Image";
+import { useState } from 'react';
 const cx = className.bind(styles);
 
 export default function FormLogin(props) {
@@ -25,12 +26,16 @@ export default function FormLogin(props) {
                             placeholder="Enter your email"
                             type="text"
                             label="Email"
+                            setInput = {props.setEmail}
+                            checkInput = {props.checkInput}
                         />
                         <FormInput 
                             className={`${cx('form-input')}`}
                             placeholder="Enter your password"
                             type="password"
                             label="Password"
+                            setInput = {props.setPassword}
+                            checkInput = {props.checkInput}
                         />
                         <div className={`${cx("form-link")}`}>
                             <Link
@@ -41,7 +46,13 @@ export default function FormLogin(props) {
                             </Link>
                         </div>
                         <Button 
-                            buttonName="Log in"                        
+                            className={`${cx("btn-input-login")}`}
+                            classNameTitle = {`${cx("btn-title")}`}
+                            buttonName="Log in"        
+                            onEnter = {props.onEnter}         
+                            isValue={props.isValue}       
+                            isProcess ={props.isProcess}
+                            setIsProcess = {props.setIsProcess}
                         />
                             <span className={`${cx('form-help')}`}>
                                 {props.titleFormHelp} 

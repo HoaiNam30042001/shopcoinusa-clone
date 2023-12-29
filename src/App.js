@@ -4,6 +4,7 @@ import routers from "./routers/routers.js";
 import HomePage from "./Component/HomePage/HomePage.js";
 import Login from "./Layout/Login/Login.js";
 import Register from "./Layout/Register/Register.js";
+import BuyCoin from "./Component/BuyCoin/BuyCoin.js";
 import { userRouter } from "./routers/routerRender.js";
 function App() {
   const routers = userRouter;

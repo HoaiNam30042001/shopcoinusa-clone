@@ -25,21 +25,33 @@ export default function FormRegister(props) {
                             placeholder="Enter your username"
                             type="text"
                             label="Username"
+                            setInput = {props.setEmail}
+                            checkInput = {props.checkInput}
                         />
                         <FormInput 
                             className={`${cx('form-input')}`}
                             placeholder="Enter your email"
                             type="text"
                             label="Email"
+                            setInput = {props.setEmail}
+                            checkInput = {props.checkInput}
                         />
                         <FormInput 
                             className={`${cx('form-input')}`}
                             placeholder="Enter your password"
                             type="password"
                             label="Password"
+                            setInput = {props.setEmail}
+                            checkInput = {props.checkInput}
                         />
                         <Button 
-                            buttonName="Register"                        
+                            buttonName="Register"      
+                            className={`${cx("btn-input-login")}`}
+                            classNameTitle = {`${cx("btn-title")}`}
+                            onEnter = {props.onEnter}         
+                            isValue={props.isValue}       
+                            isProcess ={props.isProcess}
+                            setIsProcess = {props.setIsProcess}      
                         />
                             <span className={`${cx('form-help')}`}>
                                 {props.titleFormHelp} 
