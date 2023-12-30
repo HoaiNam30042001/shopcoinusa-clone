@@ -1,47 +1,45 @@
-import { ICoin } from "./coin.interface";
-import { Injectable } from "@nestjs/common";
-import { CoinEntity } from "./coin.entity";
-import { DataSource, Repository } from "typeorm";
+import { Coin } from "./coin.interface";
+import { Injectable, Inject } from "@nestjs/common";
+
+import { Model } from 'mongoose';
 @Injectable()
-export class CoinService implements ICoin {
+export class CoinService {
   constructor(
-    private readonly coinRepository: Repository<CoinEntity>,
-    private dataSource: DataSource
+    @Inject('COIN_MODEL')
+    private coinModel: Model<Coin>,
   ) {}
-  async create(data: any): Promise<any> {
+  async create(data: any): Promise<Coin> {
     try {
-      const coinEntity = this.coinRepository.create(data);
-      await this.coinRepository.save(coinEntity);
-      return coinEntity;
+      const createdCoin = new this.coinModel(data);
+      return createdCoin.save();
     } catch (error) {
       throw error;
     }
   }
   async update(id: string, data: any): Promise<any> {
     try {
-      return await this.coinRepository.update(id, data);
+      return await this.coinModel.findByIdAndUpdate(id, data)
     } catch (error) {
       throw error;
     }
   }
-  async findById(id: string): Promise<CoinEntity> {
+  async findById(id: string): Promise<any> {
     try {
-      return await this.coinRepository.findOne({ where: { id } });
+      return await this.coinModel.findById(id);
     } catch (error) {
       throw error;
     }
   }
-  async findAll(): Promise<CoinEntity[]> {
+  async findAll(): Promise<any[]> {
     try {
-      return await this.coinRepository.find();
+      return await this.coinModel.find();
     } catch (error) {
       throw error;
     }
   }
   async delete(id: string): Promise<any> {
     try {
-      const coinEntity = await this.coinRepository.findOne({ where: { id } });
-      return await this.coinRepository.remove(coinEntity);
+      return await this.coinModel.findByIdAndDelete(id);
     } catch (error) {
       throw error;
     }

@@ -1,12 +1,15 @@
-import { Module } from "@nestjs/common";
-import { CoinService } from "./coin.service";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { CoinEntity } from "./coin.entity";
-import { CoinController } from "./coin.controller";
+import { Module } from '@nestjs/common';
+import { CoinController } from './coin.controller';
+import { CoinService } from './coin.service';
+import { CoinProviders } from './coin.providers';
+import { DatabaseModule } from 'src/database/database.module';
+
 @Module({
-  imports: [TypeOrmModule.forFeature([CoinEntity])], // Thêm TypeOrmModule.forFeature cho TopUpEntity
-  providers: [CoinService],
+  imports: [DatabaseModule],
   controllers: [CoinController],
-  exports: [TypeOrmModule.forFeature([CoinEntity])], // Cũng cần thêm vào exports nếu bạn muốn xuất repository
+  providers: [
+    CoinService,
+    ...CoinProviders,
+  ],
 })
 export class CoinModule {}

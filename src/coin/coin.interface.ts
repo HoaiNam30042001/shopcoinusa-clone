@@ -1,9 +1,16 @@
-import { CoinEntity } from "./coin.entity";
+import { Document } from 'mongoose';
 
-export interface ICoin {
-  create(data: any): Promise<any>;
-  update(id: string, data: any): Promise<any>;
-  findById(id: string): Promise<CoinEntity>;
-  findAll(): Promise<CoinEntity[]>;
-  delete(id: string): Promise<any>;
+export interface Coin extends Document {
+  readonly logo: string,
+  readonly name: string,
+  readonly symbol: string,
+  readonly price: number,
+  readonly type: string,
+  readonly fullName: string,
+  readonly private: boolean,
+  readonly unshow: string,
+  readonly low: number,
+  readonly hight: number,
 }
+
+
