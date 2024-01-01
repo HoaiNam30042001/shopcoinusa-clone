@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { WithdrawController } from './withdraw.controller';
-import { WithdrawProviders } from './wihtdraw.providers';
+import { WithdrawProvider } from './wihtdraw.providers';
 import { DatabaseModule } from 'src/database/database.module';
 import { WithdrawService } from './withdraw.service';
 
@@ -9,7 +9,7 @@ import { WithdrawService } from './withdraw.service';
   controllers: [WithdrawController],
   providers: [
     WithdrawService,
-    ...WithdrawProviders,
+    ...WithdrawProvider,
   ],
 })
-export class CoinModule {}
+export class WithdrawModule {}

@@ -1,4 +1,4 @@
-import { Deposit } from "./deposit.interface";
+import { IDeposit } from "./deposit.interface";
 import { Injectable, Inject, BadRequestException } from "@nestjs/common";
 
 import { Model } from 'mongoose';
@@ -7,7 +7,7 @@ import { DEPOSIT_TYPE, Deposit_Type_Status } from "./deposit.type";
 export class DepositService {
   constructor(
     @Inject('DEPOSIT_MODEL')
-    private depositModel: Model<Deposit>,
+    private depositModel: Model<IDeposit>,
   ) { }
   async create(data: any): Promise<any> {
     try {

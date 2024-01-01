@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export interface Withdraw extends Document {
+export interface IWithdraw extends Document {
   status: string;
   code: string;
   amount: number;
