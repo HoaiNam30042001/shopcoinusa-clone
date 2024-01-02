@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { DepositController } from './deposit.controller';
-import { DepositProviders } from './deposit.providers';
+import { DepositProvider } from './deposit.provider';
 import { DatabaseModule } from 'src/database/database.module';
 import { DepositService } from './deposit.service';
 
@@ -9,7 +9,7 @@ import { DepositService } from './deposit.service';
   controllers: [DepositController],
   providers: [
     DepositService,
-    ...DepositProviders,
+    ...DepositProvider,
   ],
 })
-export class CoinModule {}
+export class DepositModule {}

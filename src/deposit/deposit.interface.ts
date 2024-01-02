@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
-export interface Deposit extends Document {
+export interface IDeposit extends Document {
   status: string,
   amount: number,
   user: string,

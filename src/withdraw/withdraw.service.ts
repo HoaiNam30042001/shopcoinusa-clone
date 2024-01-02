@@ -1,4 +1,4 @@
-import { Withdraw } from "./withdraw.interface";
+import { IWithdraw } from "./withdraw.interface";
 import { Injectable, Inject, BadRequestException } from "@nestjs/common";
 
 import { Model } from 'mongoose';
@@ -8,7 +8,7 @@ import { WITHDRAW_TYPE, Withdraw_Type_Status } from "./withdraw.type";
 export class WithdrawService {
   constructor(
     @Inject('WITHDRAW_MODEL')
-    private withdrawModel: Model<Withdraw>,
+    private withdrawModel: Model<IWithdraw>,
   ) { }
   async create(data: any): Promise<any> {
     return await this.withdrawModel.create(data);
