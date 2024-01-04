@@ -4,17 +4,24 @@ import styles from "./General.module.css";
 import Search from "../Search/Search";
 import { RefreshIcon } from "../Icons";
 import TableData from "../TableData/TableData";
+import Button from "../Button/Button";
+import { BlockUserIcon } from "../Icons";
 const cx = className.bind(styles);
 let refreshPage = () => {
   window.location.reload();
 };
-function General({ children, dataHeaders, noActions }) {
+function General({ children, dataHeaders, noActions,addPaymentBtn }) {
   return (
     <>
       <div>
         <div className={`${cx("general-top")}`}>
           <Search />
-          <div className="flex-center ">
+          <div className="flex-center">
+            {
+              true && (
+                addPaymentBtn
+              )
+            }
             <button
               className={`${cx("Button_button__wiIYs")} confirmbgc`}
               onClick={refreshPage}

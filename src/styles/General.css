@@ -36,6 +36,12 @@
     --search-input-color: #333333;
     --boxShadow-input-color: rgba(255, 193, 0, 0.25);
     --breadcrumb-link-color: #757575;
+    --table-type-item-color-user: #c1f5c3;
+    --table-type-item-color-admin: #f4e9c7;
+    --table-type-item-color-edit-background :#ccf0cd;
+    --table-type-item-color-remove-background: #f1a6a6;
+    --table-type-item-color-brn-create-payment-background :#14e21b;
+
 }
 
 * {

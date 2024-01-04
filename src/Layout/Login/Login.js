@@ -8,7 +8,7 @@ const cx = className.bind(styles);
 export default function Login() {
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
-  const [isProcess,setIsProcess] = useState(true)
+  const [isProcess,setIsProcess] = useState(false)
   const [isValue,setIsValue] = useState(false)
  
   const checkInput = ()=>{
