@@ -10,7 +10,7 @@ export default function Register() {
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
   const [userName,setUserName] = useState("")
-  const [isProcess,setIsProcess] = useState(true)
+  const [isProcess,setIsProcess] = useState(false)
   const [isValue,setIsValue] = useState(false)
   const checkInput = ()=>{
     if (email.length === 0 || password.length ===0|| userName.length ===0) {

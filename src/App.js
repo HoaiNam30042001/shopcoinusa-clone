@@ -14,6 +14,7 @@ function App() {
         <Routes>
           {routers.map((route, index) => {
             const Page = route.component;
+            const Layout = route.Layout
             return (
               <Route
                 key={index}
@@ -26,8 +27,6 @@ function App() {
               />
             );
           })}
-          <Route path={routers.login} element={<Login />} />
-          <Route path={routers.register} element={<Register />} />
         </Routes>
         <div
           className="scroll-to-top-container"

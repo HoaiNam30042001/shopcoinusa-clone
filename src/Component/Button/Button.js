@@ -8,14 +8,15 @@ export default function Button(props) {
         <>
         {props.isProcess ? (
             <button className={props.className} onClick={props.onEnter}>
-            <a className={props.classNameTitle}>
-                {props.buttonName}
-            </a>
-        </button> 
+                <Loading/>
+            </button> 
         ): (
             <button className={props.className} onClick={props.onEnter}>
-                <Loading/>
-        </button> 
+                {props.icon}
+                <a className={props.classNameTitle}>
+                    {props.buttonName}
+                </a>
+            </button>
         )}
         </>
     );
