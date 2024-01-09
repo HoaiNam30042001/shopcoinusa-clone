@@ -1,10 +1,28 @@
 import DataCoinsUser from "../../utils/Data/CoinsUser";
 import className from "classnames/bind";
 import styles from "./TableData.module.css";
+import Image from "../Image/Image";
+import { useMemo, useState } from "react";
+import Pagination from "../Pagination/Pagination";
 
 const cx = className.bind(styles);
-function TableData({ children, headers, noActions }) {
-  console.log(noActions);
+let PageSize = 10;
+
+export function TrObjectImage({ item }) {
+  return (
+    <>
+      <Image src={item} alt={item} className={`${cx("image")}`} />
+    </>
+  );
+}
+function TableData({
+  children,
+  headers,
+  noActions,
+  data,
+  onPageChange,
+  currentPage,
+}) {
   const { name, index, h1, h2, h3, h4, h5, h6, h7 } = headers;
   function Thead({ item }) {
     return <>{item && <th className={`${cx("hovered")}`}>{item.title}</th>}</>;
@@ -27,6 +45,13 @@ function TableData({ children, headers, noActions }) {
         </thead>
         <tbody className="tbody">{children}</tbody>
       </table>
+      <Pagination
+        className="pagination-bar"
+        currentPage={currentPage}
+        totalCount={data.length}
+        pageSize={PageSize}
+        onPageChange={onPageChange}
+      />
     </>
   );
 }

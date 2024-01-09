@@ -14,7 +14,7 @@ function App() {
         <Routes>
           {routers.map((route, index) => {
             const Page = route.component;
-            const Layout = route.Layout
+            const Layout = route.Layout;
             return (
               <Route
                 key={index}
