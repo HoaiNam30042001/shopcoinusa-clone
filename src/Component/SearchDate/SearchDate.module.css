@@ -34,6 +34,7 @@
     height: 26px;
     line-height: 22px;
     width: 100%;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .search-input .input:not(:placeholder-shown) {

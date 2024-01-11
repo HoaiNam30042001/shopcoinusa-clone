@@ -7,7 +7,7 @@ import styles from "./Dashboard.module.css";
 import { Link } from "react-router-dom";
 import routers from "../../routers/routers";
 import Button from "../ButtonDashboard/Button";
-import { SearchDateIcon } from "../Icons";
+import { RefreshIcon, SearchDateIcon } from "../Icons";
 import Modal from "../Modal/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { dateVnFormat2 } from "../../utils/format/DateVN";
@@ -16,6 +16,7 @@ import SelectValue from "../SelectValue/SelectValue";
 import SearchDate from "../SearchDate/SearchDate";
 import periodDate from "../../utils/Data/PeriodDate";
 import { formatUSD } from "../../utils/format/FormatMoney";
+import { refreshPage } from "../../utils/RefreshPage";
 
 const cx = className.bind(styles);
 
@@ -24,13 +25,11 @@ function Dashboard() {
   let { dateFrom, dateTo } = useSelector((state) => {
     return state.dateReducer;
   });
-  const [isProcess, setIsProcess] = React.useState(false);
-  const [isLoad, setIsLoad] = React.useState(false);
-  const [isModalDate, setIsModalDate] = React.useState(false);
-  const [isPeriod, setIsPeriod] = React.useState(false);
-  const [period, setPeriod] = React.useState(null);
-  const [dataSymbol, setDataSymbol] = React.useState(null);
-  const [date, setDate] = React.useState({
+  const [isLoad, setIsLoad] = useState(false);
+  const [isModalDate, setIsModalDate] = useState(false);
+  const [isPeriod, setIsPeriod] = useState(false);
+  const [period, setPeriod] = useState(null);
+  const [date, setDate] = useState({
     from: null,
     to: null,
   });
@@ -191,6 +190,18 @@ function Dashboard() {
             <span className={`${cx("general-button-text")}`}>
               Select Date Report
             </span>
+          </Button>
+          <Button
+            className="confirmbgc"
+            onClick={refreshPage}
+            style={{ width: "max-content" }}
+          >
+            <div className="flex-center">
+              <RefreshIcon className="fz12" />
+              <span className={`${cx("general-button-text")}`}>
+                Refresh Page
+              </span>
+            </div>
           </Button>
         </div>
       </div>
