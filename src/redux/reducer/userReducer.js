@@ -1,4 +1,5 @@
 import { localUserServ } from "../../services/localServices";
+import { USER_LOGIN } from "../constant/constant";
 
 const initialState = {
   currentUser: localUserServ.get(),
@@ -6,7 +7,7 @@ const initialState = {
 
 let userReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case "USER_LOGIN":
+    case USER_LOGIN:
       state.currentUser = payload;
       return { ...state };
 
